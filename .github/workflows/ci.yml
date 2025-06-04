@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: PYTHONPATH=. pytest
 
   docker-build:
     needs: build-and-test
@@ -42,4 +42,4 @@ jobs:
       url: https://example.com
     steps:
       - name: Simulated deployment
-        run: echo "🚀 Production deploy (after approval)"
+        run: echo "Production deploy (after approval)"
